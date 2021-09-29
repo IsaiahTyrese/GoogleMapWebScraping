@@ -1,0 +1,14 @@
+# Having trouble reducing win + r input so I don't have to input relative path
+import webbrowser
+import sys
+import pyperclip
+
+sys.argv # ['mapit.py, '', '' , '']
+# Check if comand line arguments were passed
+if len(sys.argv) > 1:
+    address = ' '.join(sys.argv[1:])
+else:
+    address = pyperclip.paste()
+
+# https://www.google.com/maps/place/<ADDRESS>
+webbrowser.open('https://www.google.com/maps/place/' + address)
